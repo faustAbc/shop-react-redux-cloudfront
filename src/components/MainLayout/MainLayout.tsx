@@ -8,7 +8,10 @@ import Box from "@mui/material/Box";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
+      <div>
+        Copyright © - Changed for Task 2.2 - Deployed with Serverless-finch and
+        serverless-single-page-app plugins
+      </div>
       <Link color="inherit" href="https://material-ui.com/" underline="hover">
         My Store
       </Link>{" "}
