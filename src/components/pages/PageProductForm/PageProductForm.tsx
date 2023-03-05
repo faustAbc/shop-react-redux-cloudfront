@@ -1,6 +1,5 @@
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import { AvailableProduct, AvailableProductSchema } from "~/models/Product";
 import { Formik, Field, FormikProps, Form } from "formik";
 import TextField from "~/components/Form/TextField";
 import { useNavigate, useParams } from "react-router-dom";
@@ -12,6 +11,10 @@ import {
   useRemoveProductCache,
   useUpsertAvailableProduct,
 } from "~/queries/products";
+import {
+  AvailableProduct,
+  AvailableProductSchema,
+} from "@alexgusevserg/shared";
 
 const initialValues: AvailableProduct = AvailableProductSchema.cast({});
 

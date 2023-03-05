@@ -1,9 +1,17 @@
+import {
+  AvailableProduct,
+  CartItem,
+  Order,
+  Product,
+} from "@alexgusevserg/shared";
+import {
+  availableProducts,
+  cart,
+  orders,
+  products,
+} from "@alexgusevserg/shared/dist/mocks/data";
 import { rest } from "msw";
 import API_PATHS from "~/constants/apiPaths";
-import { availableProducts, orders, products, cart } from "~/mocks/data";
-import { CartItem } from "~/models/CartItem";
-import { Order } from "~/models/Order";
-import { AvailableProduct, Product } from "~/models/Product";
 
 export const handlers = [
   rest.get(`${API_PATHS.bff}/product`, (req, res, ctx) => {
@@ -22,7 +30,7 @@ export const handlers = [
       ctx.json<AvailableProduct[]>(availableProducts)
     );
   }),
-  rest.get(`${API_PATHS.bff}/product/:id`, (req, res, ctx) => {
+  rest.get(`${API_PATHS.bff}/products/:id`, (req, res, ctx) => {
     const product = availableProducts.find((p) => p.id === req.params.id);
     if (!product) {
       return res(ctx.status(404));
