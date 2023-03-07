@@ -14,7 +14,7 @@ import { rest } from "msw";
 import API_PATHS from "~/constants/apiPaths";
 
 export const handlers = [
-  rest.get(`${API_PATHS.bff}/product`, (req, res, ctx) => {
+  rest.get(`${API_PATHS.bff}/products`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.delay(), ctx.json<Product[]>(products));
   }),
   rest.put(`${API_PATHS.bff}/product`, (req, res, ctx) => {
