@@ -131,3 +131,5 @@ resources:
       Value: !Ref WebAppS3Bucket
     WebAppCloudFrontDistributionOutput:
       Value: !GetAtt WebAppCloudFrontDistribution.DomainName
+      Export:
+        Name: !Sub "${AWS::StackName}::WebAppCloudFrontDistribution::DomainName"

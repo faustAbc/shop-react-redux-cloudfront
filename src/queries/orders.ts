@@ -1,9 +1,9 @@
+import { Order } from "@alexgusevserg/shared";
+import { OrderStatus } from "@alexgusevserg/shared/dist/constants/order";
 import axios, { AxiosError } from "axios";
 import React from "react";
 import { useQuery, useQueryClient, useMutation } from "react-query";
 import API_PATHS from "~/constants/apiPaths";
-import { OrderStatus } from "~/constants/order";
-import { Order } from "~/models/Order";
 
 export function useOrders() {
   return useQuery<Order[], AxiosError>("orders", async () => {
